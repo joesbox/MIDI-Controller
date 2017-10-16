@@ -287,7 +287,7 @@ void loop() {
 
   }
 
-  // Loop through all eight mux pins
+  // Loop through only the first five mux pins (last three are not connected)
   for (byte pin = 0; pin <= 4; pin++)
   {    
     // Effectively a 5ms debounce
