@@ -32,7 +32,7 @@ long msecMux[5] = {0, 0, 0, 0, 0};
 // Create Bounce objects for each button
 Bounce button0 = Bounce(14, 5);
 Bounce button1 = Bounce(15, 5);  // 5 = 5 ms debounce time
-Bounce button2 = Bounce(19, 5);  // which is appropriate for good
+Bounce button2 = Bounce(21, 5);  // which is appropriate for good
 Bounce button3 = Bounce(22, 5);  // quality mechanical pushbuttons
 Bounce button4 = Bounce(23, 5);
 
