@@ -70,17 +70,17 @@ int buttonState[5] = { -1, -1, -1, -1, -1};
 int buttonStatePrev[5] = { -1, -1, -1, -1, -1};
 
 void setup() {
-  // Configure the pins for input mode with pullup resistors.
+  // Configure the pins for input mode with pullup resistors on the digital inputs  
   pinMode(14, INPUT_PULLUP);
   pinMode(15, INPUT_PULLUP);
   pinMode(21, INPUT_PULLUP);
   pinMode(22, INPUT_PULLUP);
   pinMode(23, INPUT_PULLUP);
-  pinMode(A2, INPUT_PULLUP);
-  pinMode(A3, INPUT_PULLUP);
-  pinMode(A4, INPUT_PULLUP);
-  pinMode(A10, INPUT_PULLUP);
-  pinMode(A11, INPUT_PULLUP);
+  pinMode(A2, INPUT);
+  pinMode(A3, INPUT);
+  pinMode(A4, INPUT);
+  pinMode(A10, INPUT);
+  pinMode(A11, INPUT);
 
   // LED Pin to output mode
   pinMode(13, OUTPUT);
@@ -91,7 +91,7 @@ void setup() {
   // Turn the LED on
   digitalWrite(13, HIGH);
 
-  // Set up the select pins as outputs for the mux chip:
+  // Set up the select pins as outputs for the mux chip and raise them:
   for (int i = 0; i < 3; i++)
   {
     pinMode(selectPins[i], OUTPUT);
