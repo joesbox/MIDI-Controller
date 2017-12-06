@@ -324,10 +324,13 @@ void selectMuxPin(byte pin)
 {
   for (int i = 0; i < 3; i++)
   {
-    if (pin & (1 << i))
+    if (pin & (1 << i)){
       digitalWrite(selectPins[i], HIGH);
-    else
+      delayMicroseconds(10);
+    }
+    else {
       digitalWrite(selectPins[i], LOW);
+      delayMicroseconds(10);
+    }
   }
 }
-
