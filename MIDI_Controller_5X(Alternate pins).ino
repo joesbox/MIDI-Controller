@@ -32,7 +32,7 @@ long msecMux[5] = {0, 0, 0, 0, 0};
 // Create Bounce objects for each button
 Bounce button0 = Bounce(14, 5);
 Bounce button1 = Bounce(15, 5);  // 5 = 5 ms debounce time
-Bounce button2 = Bounce(21, 5);  // which is appropriate for good
+Bounce button2 = Bounce(19, 5);  // which is appropriate for good
 Bounce button3 = Bounce(22, 5);  // quality mechanical pushbuttons
 Bounce button4 = Bounce(23, 5);
 
@@ -62,7 +62,7 @@ int previous_value5;
 // Setup mux chip pins
 const int selectPins[3] = {0, 1, 12}; // S0~0, S1~1, S2~12
 const int zOutput = 5;
-const int zInput = 19; // Connect common (Z) to 19 (digital input)
+const int zInput = 21; // Connect common (Z) to 21 (digital input)
 const int muxNotes[5] = {65, 66, 67, 68, 69}; // Notes assinged to encoder buttons
 
 // Mux button states for de-bouncing
@@ -73,7 +73,7 @@ void setup() {
   // Configure the pins for input mode with pullup resistors on the digital inputs  
   pinMode(14, INPUT_PULLUP);
   pinMode(15, INPUT_PULLUP);
-  pinMode(21, INPUT_PULLUP);
+  pinMode(19, INPUT_PULLUP);
   pinMode(22, INPUT_PULLUP);
   pinMode(23, INPUT_PULLUP);
   pinMode(A2, INPUT);
