@@ -161,25 +161,25 @@ void loop() {
     int n4 = analogRead(A11) / 8;
 
     // only transmit MIDI messages if analog input changed
-    // and change greater than 1 has occured
+    // and change greater than 2 has occured
     // (Helps stop unwanted MIDI messages when the pot is teetering between two values)
-    if (abs(n0 - previousA0) > 1) {
+    if (abs(n0 - previousA0) > 2) {
       usbMIDI.sendControlChange(controllerA0, n0, channel);
       previousA0 = n0;
     }
-    if (abs(n1 - previousA1) > 1) {
+    if (abs(n1 - previousA1) > 2) {
       usbMIDI.sendControlChange(controllerA1, n1, channel);
       previousA1 = n1;
     }
-    if (abs(n2 - previousA2) > 1) {
+    if (abs(n2 - previousA2) > 2) {
       usbMIDI.sendControlChange(controllerA2, n2, channel);
       previousA2 = n2;
     }
-    if (abs(n3 - previousA3) > 1) {
+    if (abs(n3 - previousA3) > 2) {
       usbMIDI.sendControlChange(controllerA3, n3, channel);
       previousA3 = n3;
     }
-    if (abs(n4 - previousA4) > 1) {
+    if (abs(n4 - previousA4) > 2) {
       usbMIDI.sendControlChange(controllerA4, n4, channel);
       previousA4 = n4;
     }
