@@ -163,7 +163,7 @@ void loop() {
     // only transmit MIDI messages if analog input changed
     // and change greater than 1 has occured
     // (Helps stop unwanted MIDI messages when the pot is teetering between two values)
-    if (abs(n0 - previousA0) > 1) {
+    if (abs(n0 - previousA0) > 3) { // Found that the value from this pot is a bit jittery still
       usbMIDI.sendControlChange(controllerA0, n0, channel);
       previousA0 = n0;
     }
